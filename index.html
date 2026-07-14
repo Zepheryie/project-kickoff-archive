@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>과제 추진안 아카이브</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🗂️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <p class="eyebrow">과제 착수</p>
+        <h1>추진안 아카이브</h1>
+        <p class="lede">과제별 추진안(추진 방향·주요 일정·역할 분담)을 모아 둡니다. 카드를 누르면 그 과제의 상세 추진안이 열립니다.</p>
+      </div>
+      <div class="head-right">
+        <span class="sample-pill">샘플 데이터</span>
+        <button class="btn" id="themeBtn" aria-label="테마 전환"><span id="themeIcon">🌙</span><span id="themeTxt">다크</span></button>
+      </div>
+    </header>
+
+    <div class="filters" role="group" aria-label="상태 필터">
+      <span class="flabel">상태</span>
+      <button class="fchip" data-st="all" aria-pressed="true">전체</button>
+      <button class="fchip" data-st="plan" aria-pressed="false">기획</button>
+      <button class="fchip" data-st="doing" aria-pressed="false">진행중</button>
+      <button class="fchip" data-st="done" aria-pressed="false">완료</button>
+    </div>
+
+    <p class="count" id="count">과제 1건</p>
+
+    <div class="cards" id="cards">
+      <a class="plan" href="plans/chatbot.html" data-st="plan">
+        <div class="pd">2026-07-14 · 착수</div>
+        <div class="pt">사내 지식 검색 챗봇 도입</div>
+        <div class="pg"><b>목표</b> · 사내 문서 검색 시간 50% 단축</div>
+        <div class="pmeta">
+          <span class="status st-plan">기획</span>
+          <span class="metric">단계 4 · 마일스톤 4 · 역할 5</span>
+        </div>
+      </a>
+    </div>
+    <p class="empty-note" id="emptyNote" style="display:none">해당 상태의 과제가 없습니다.</p>
+
+    <footer class="note">
+      이 아카이브는 <strong>가공(샘플) 데이터</strong> 기반 정적 스냅샷입니다. 표 내용은 예시이며, 실제로는 과제별 추진안이 카드로 쌓입니다.
+      공개 파일에는 데이터 스냅샷만 담기며 API 키는 포함되지 않습니다. 일정·역할은 참고용 초안입니다.
+    </footer>
+  </div>
+
+  <script>
+    var root=document.documentElement, b=document.getElementById('themeBtn'),
+        ic=document.getElementById('themeIcon'), tx=document.getElementById('themeTxt');
+    function dark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
+    function sync(){var d=dark();ic.textContent=d?'☀️':'🌙';tx.textContent=d?'라이트':'다크';}
+    b.addEventListener('click',function(){root.setAttribute('data-theme',dark()?'light':'dark');sync();}); sync();
+
+    var cards=[].slice.call(document.querySelectorAll('#cards .plan'));
+    var countEl=document.getElementById('count'), emptyNote=document.getElementById('emptyNote');
+    document.querySelectorAll('.fchip').forEach(function(chip){
+      chip.addEventListener('click',function(){
+        document.querySelectorAll('.fchip').forEach(function(c){c.setAttribute('aria-pressed','false');});
+        chip.setAttribute('aria-pressed','true');
+        var st=chip.getAttribute('data-st'), shown=0;
+        cards.forEach(function(card){
+          var match = st==='all' || card.getAttribute('data-st')===st;
+          card.classList.toggle('hidden', !match); if(match) shown++;
+        });
+        countEl.textContent='과제 '+shown+'건';
+        emptyNote.style.display = shown===0 ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

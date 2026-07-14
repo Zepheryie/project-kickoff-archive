@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사내 지식 검색 챗봇 도입 · 추진안</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🗂️</text></svg>">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap narrow">
+    <a class="back" href="../index.html">← 아카이브 목록으로</a>
+    <header class="top" style="margin-bottom:0">
+      <div>
+        <div class="meta-date">2026-07-14 · 착수 · <span style="color:var(--warn)">기획</span></div>
+        <h1 class="detail-title">사내 지식 검색 챗봇 도입</h1>
+      </div>
+      <div class="head-right">
+        <button class="btn" id="themeBtn" aria-label="테마 전환"><span id="themeIcon">🌙</span><span id="themeTxt">다크</span></button>
+      </div>
+    </header>
+
+    <div class="goal"><b>목표</b> — 사내 문서 검색 시간 50% 단축</div>
+    <div class="chips">
+      <span class="chip-k">기간 · 3개월</span><span class="chip-k">팀 · PM 1, 개발 2, 디자인 1</span><span class="chip-k">제약 · 사내 SSO 필수</span>
+    </div>
+
+    <div class="assump">
+      <b>채운 가정</b> — 입력에 없던 부분은 아래 가정으로 채웠습니다.
+      <ul>
+        <li>전체 기간 12주로 가정</li>
+        <li>대상 문서는 위키·공유드라이브 우선</li>
+        <li>정확도 목표: 상위 3건 적중률 85%로 가정</li>
+      </ul>
+    </div>
+
+    <div class="section-h"><span class="tnum">1</span> 추진 방향</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>구분(단계/영역)</th><th>추진 방향</th><th>핵심 활동</th><th>기대 산출물</th></tr></thead>
+      <tbody>
+        <tr><td>1. 현황 파악</td><td>검색 페인포인트·문서 소스 정의</td><td>사용자 인터뷰, 문서 저장소 조사</td><td>요구사항 정의서</td></tr>
+        <tr><td>2. PoC</td><td>소규모 데이터로 검색 품질 검증</td><td>RAG 프로토타입, 정확도 측정</td><td>PoC 결과 보고</td></tr>
+        <tr><td>3. 구축</td><td>SSO·권한 반영해 본구축</td><td>파이프라인·검색 UI 개발</td><td>베타 서비스</td></tr>
+        <tr><td>4. 확산</td><td>부서별 롤아웃·교육</td><td>온보딩 자료, 피드백 수집</td><td>정식 오픈</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <div class="section-h"><span class="tnum">2</span> 주요 일정</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>마일스톤</th><th>목표 시점</th><th>주요 활동</th><th>완료 기준(산출물)</th></tr></thead>
+      <tbody>
+        <tr><td>M1 요구사항 확정</td><td>~2주차</td><td>인터뷰·범위 확정</td><td>요구사항 정의서 승인</td></tr>
+        <tr><td>M2 PoC 완료</td><td>~5주차</td><td>프로토타입·정확도 검증</td><td>검색 정확도 목표 달성</td></tr>
+        <tr><td>M3 베타 오픈</td><td>~9주차</td><td>본구축·SSO 연동</td><td>파일럿 부서 오픈</td></tr>
+        <tr><td>M4 정식 오픈</td><td>~12주차</td><td>전사 롤아웃·교육</td><td>전사 오픈, KPI 측정 시작</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <div class="section-h"><span class="tnum">3</span> 역할 분담</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>역할</th><th>담당</th><th>책임 범위(R&R)</th><th>주요 협업 대상</th></tr></thead>
+      <tbody>
+        <tr><td>PM</td><td>(미정)</td><td>범위·일정·이해관계자 조율</td><td>전 역할</td></tr>
+        <tr><td>개발 리드</td><td>(미정)</td><td>아키텍처·검색 파이프라인·품질</td><td>PM, 데이터</td></tr>
+        <tr><td>데이터/ML</td><td>(미정)</td><td>검색 품질·평가지표 관리</td><td>개발, 도메인</td></tr>
+        <tr><td>디자인</td><td>(미정)</td><td>검색 UX·온보딩 설계</td><td>PM, 개발</td></tr>
+        <tr><td>도메인 담당</td><td>(미정)</td><td>문서 정합성·정확도 검수</td><td>데이터, PM</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <footer class="note">
+      <strong>가공(샘플) 추진안</strong>입니다. 일정·역할은 참고용 초안이며, 빈 항목(담당 등)은 확정 시 채워집니다.
+    </footer>
+  </div>
+  <script>
+    var root=document.documentElement,b=document.getElementById('themeBtn'),ic=document.getElementById('themeIcon'),tx=document.getElementById('themeTxt');
+    function dark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
+    function sync(){var d=dark();ic.textContent=d?'☀️':'🌙';tx.textContent=d?'라이트':'다크';}
+    b.addEventListener('click',function(){root.setAttribute('data-theme',dark()?'light':'dark');sync();});sync();
+  </script>
+</body>
+</html>
