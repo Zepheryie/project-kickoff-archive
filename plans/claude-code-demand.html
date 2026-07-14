@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사내 Claude Code 수요 조사 · 추진안</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🗂️</text></svg>">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap narrow">
+    <a class="back" href="../index.html">← 아카이브 목록으로</a>
+    <header class="top" style="margin-bottom:0">
+      <div>
+        <div class="meta-date">2026-07-14 · 착수 · <span style="color:var(--warn)">기획</span></div>
+        <h1 class="detail-title">사내 Claude Code 수요 조사</h1>
+      </div>
+      <div class="head-right">
+        <button class="btn" id="themeBtn" aria-label="테마 전환"><span id="themeIcon">🌙</span><span id="themeTxt">다크</span></button>
+      </div>
+    </header>
+
+    <div class="goal"><b>목표</b> — 사내 개발조직의 Claude Code 도입 수요·기대효과·우려를 정량·정성으로 파악해, 도입 여부·우선 적용 조직·예산 규모에 대한 의사결정 근거(타당성 보고서)를 도출.</div>
+    <div class="chips">
+      <span class="chip-k">기간 · 6주(가정)</span><span class="chip-k">대상 · 개발/데이터 조직 우선</span><span class="chip-k">방식 · 설문+인터뷰(+선택 파일럿)</span>
+    </div>
+
+    <div class="assump">
+      <b>채운 가정</b> — 입력에 없던 부분은 아래 가정으로 채웠습니다.
+      <ul>
+        <li>전체 기간 6주로 가정</li>
+        <li>대상: 사내 개발/데이터 조직 우선 (정확 인원 미정)</li>
+        <li>목표 응답률 60% 가정</li>
+        <li>산출물: 수요 조사 보고서 + 도입 권고안</li>
+      </ul>
+    </div>
+
+    <div class="section-h"><span class="tnum">1</span> 추진 방향</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>구분(단계/영역)</th><th>추진 방향</th><th>핵심 활동</th><th>기대 산출물</th></tr></thead>
+      <tbody>
+        <tr><td>1. 준비·설계</td><td>조사 목적·대상·지표 정의</td><td>이해관계자 정렬, 설문 문항·인터뷰 가이드 설계</td><td>조사 설계서, 설문 문항</td></tr>
+        <tr><td>2. 수요 파악</td><td>설문·인터뷰로 수요·페인포인트 수집</td><td>설문 배포·회수, 심층 인터뷰 8~10건</td><td>응답 데이터, 인터뷰 노트</td></tr>
+        <tr><td>3. 분석</td><td>정량·정성 분석으로 인사이트 도출</td><td>세그먼트별 수요율·기대효과·도입 장벽 분석</td><td>분석 결과, 핵심 인사이트</td></tr>
+        <tr><td>4. (선택) 파일럿</td><td>소규모 체험으로 실제 효용 검증</td><td>파일럿 팀 운영, 전후 생산성 비교</td><td>파일럿 결과</td></tr>
+        <tr><td>5. 결론·권고</td><td>도입 타당성·우선순위·리스크 정리</td><td>보고서 작성, 경영진 보고</td><td>수요 조사 보고서, 도입 권고안</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <div class="section-h"><span class="tnum">2</span> 주요 일정</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>마일스톤</th><th>목표 시점</th><th>주요 활동</th><th>완료 기준(산출물)</th></tr></thead>
+      <tbody>
+        <tr><td>M1 조사 설계 확정</td><td>~1주차</td><td>목적·대상·문항 확정</td><td>조사 설계서 승인</td></tr>
+        <tr><td>M2 설문·인터뷰 완료</td><td>~3주차</td><td>설문 배포·회수, 인터뷰 진행</td><td>목표 응답률(60%) 달성</td></tr>
+        <tr><td>M3 분석 완료</td><td>~4주차</td><td>정량·정성 분석</td><td>분석 결과 리뷰 통과</td></tr>
+        <tr><td>M4 (선택) 파일럿 종료</td><td>~5주차</td><td>소규모 파일럿 운영</td><td>파일럿 결과 정리</td></tr>
+        <tr><td>M5 최종 보고</td><td>~6주차</td><td>보고서·권고안 작성, 경영진 보고</td><td>도입 의사결정 인풋 제출</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <div class="section-h"><span class="tnum">3</span> 역할 분담</div>
+    <div class="tcard"><div class="tscroll"><table>
+      <thead><tr><th>역할</th><th>담당</th><th>책임 범위(R&R)</th><th>주요 협업 대상</th></tr></thead>
+      <tbody>
+        <tr><td>과제 리더(PM)</td><td>(미정)</td><td>범위·일정·이해관계자 조율, 최종 보고</td><td>전 역할</td></tr>
+        <tr><td>조사 설계 담당</td><td>(미정)</td><td>설문·인터뷰 설계, 지표 정의</td><td>PM, 분석</td></tr>
+        <tr><td>데이터 분석 담당</td><td>(미정)</td><td>설문 집계·세그먼트 분석·시각화</td><td>설계, PM</td></tr>
+        <tr><td>인터뷰어</td><td>(미정)</td><td>심층 인터뷰 진행·노트 정리</td><td>설계, 분석</td></tr>
+        <tr><td>개발조직 스폰서</td><td>(미정)</td><td>대상자 참여 독려, 현업 관점 검수</td><td>PM</td></tr>
+        <tr><td>(선택) 파일럿 운영</td><td>(미정)</td><td>파일럿 팀 세팅·지원</td><td>개발조직, PM</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <footer class="note">
+      <strong>추진안 초안</strong>입니다. 일정·역할은 참고용 초안이며, 가정으로 채운 항목과 담당(미정)은 확정 시 갱신됩니다.
+    </footer>
+  </div>
+  <script>
+    var root=document.documentElement,b=document.getElementById('themeBtn'),ic=document.getElementById('themeIcon'),tx=document.getElementById('themeTxt');
+    function dark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
+    function sync(){var d=dark();ic.textContent=d?'☀️':'🌙';tx.textContent=d?'라이트':'다크';}
+    b.addEventListener('click',function(){root.setAttribute('data-theme',dark()?'light':'dark');sync();});sync();
+  </script>
+</body>
+</html>
